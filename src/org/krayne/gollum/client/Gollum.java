@@ -34,7 +34,7 @@ public class Gollum implements EntryPoint {
      * This is the entry point method.
      */
     public void onModuleLoad() {
-        RootPanel.get("main").add(this.ui);
+        RootPanel.get("gollum").add(this.ui);
         Map map = this.ui.getMap();
         map.jumpTo(DEFAULT_START_BOOKMARK);
     }

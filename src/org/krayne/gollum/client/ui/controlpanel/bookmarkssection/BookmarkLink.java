@@ -15,7 +15,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 public class BookmarkLink extends Link {
-    public static final String STYLE_NAME = "labelLink";
     private final StaticBookmark bookmark;
     private final Map map;
     private BookmarkPopup bookmarkPopup;
@@ -24,7 +23,6 @@ public class BookmarkLink extends Link {
         super(bookmark.getBookmarkName());
         this.bookmark = new StaticBookmark(bookmark);
         this.map = map;
-        this.setStyleName(STYLE_NAME);
 
         // initialize popup
         this.bookmarkPopup = new BookmarkPopup(this.bookmark);

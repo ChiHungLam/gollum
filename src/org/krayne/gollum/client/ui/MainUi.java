@@ -19,7 +19,8 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class MainUi extends DockPanel {
     private static final String STYLE_NAME = SharedStyles.STRETCH;
-    private static final String DEFAULT_SPLIT_POSITION = "300px";
+    private static final String TAB_BAR_STYLE_NAME = "gollumMainTabBar";
+    private static final String DEFAULT_SPLIT_POSITION = "250px";
 
     private final ControlPanel controlPanel;
     private final OpenLayersMap map;
@@ -45,6 +46,8 @@ public class MainUi extends DockPanel {
         // init tab panel
         this.tabPanel = new TabPanel();
         this.tabPanel.setStyleName(SharedStyles.STRETCH);
+        this.tabPanel.getDeckPanel().setStyleName(SharedStyles.STRETCH);
+        this.tabPanel.getTabBar().setStyleName(TAB_BAR_STYLE_NAME);
         this.tabPanel.add(this.mapPanel, "Map");
         this.tabPanel.selectTab(0);
 

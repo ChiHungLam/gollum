@@ -3,7 +3,7 @@ package org.krayne.gollum.client.ui.util;
 import com.google.gwt.user.client.ui.Label;
 
 public class HeaderLabel extends Label {
-    public static final String STYLE_NAME = "headerLabel";
+    public static final String STYLE_NAME = "gollumHeaderLabel";
     
     public HeaderLabel() {
         super();

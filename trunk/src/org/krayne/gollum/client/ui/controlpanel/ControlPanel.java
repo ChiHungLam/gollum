@@ -12,7 +12,7 @@ import com.google.gwt.user.client.ui.StackPanel;
  * @author dhsu
  */
 public class ControlPanel extends StackPanel {
-    public static final String STYLE_NAME = "controlPanel";
+    public static final String STYLE_NAME = "gollumControlPanel";
 
     /**
      * Constructs an empty (no sections) {@code ControlPanel}.

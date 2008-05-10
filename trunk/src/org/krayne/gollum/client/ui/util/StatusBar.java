@@ -5,7 +5,7 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Label;
 
 public class StatusBar extends DockPanel {
-    public static final String STYLE_NAME = SharedStyles.STATUS_BAR;
+    public static final String STYLE_NAME = "gollumStatusBar";
 
     private final Label leftStatusLabel;
     private final Label rightStatusLabel;

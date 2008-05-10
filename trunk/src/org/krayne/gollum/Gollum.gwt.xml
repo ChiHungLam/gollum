@@ -5,6 +5,9 @@
     <!-- Stylesheets -->
     <stylesheet src="gollumStyle.css"/>
     
+    <!-- Scripts -->
+    <script src="lib/OpenLayers-2.6/OpenLayers.js"/>
+    
     <!-- Specify the app entry point class -->
     <entry-point class='org.krayne.gollum.client.Gollum'/>
 </module>

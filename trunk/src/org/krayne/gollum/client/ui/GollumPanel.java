@@ -48,7 +48,7 @@ public class GollumPanel extends DockPanel {
         this.tabPanel.setStyleName(SharedStyles.STRETCH);
         this.tabPanel.getDeckPanel().setStyleName(SharedStyles.STRETCH);
         this.tabPanel.getTabBar().setStyleName(TAB_BAR_STYLE_NAME);
-        this.tabPanel.add(this.mapPanel, "Map");
+        this.tabPanel.add(this.mapPanel, localeConstants.mapTabHeading());
         this.tabPanel.selectTab(0);
 
         // layout

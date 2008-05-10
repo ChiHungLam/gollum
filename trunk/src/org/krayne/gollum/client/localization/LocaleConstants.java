@@ -26,6 +26,9 @@ public interface LocaleConstants extends Constants {
     String googleHybrid();
     String googleNormal();
     
+    // map
+    String mapTabHeading();
+    
     // units
     String degrees();
 }

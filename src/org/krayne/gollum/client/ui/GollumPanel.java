@@ -17,7 +17,7 @@ import com.google.gwt.user.client.ui.HorizontalSplitPanel;
 import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class MainUi extends DockPanel {
+public class GollumPanel extends DockPanel {
     private static final String STYLE_NAME = SharedStyles.STRETCH;
     private static final String TAB_BAR_STYLE_NAME = "gollumMainTabBar";
     private static final String DEFAULT_SPLIT_POSITION = "250px";
@@ -29,7 +29,7 @@ public class MainUi extends DockPanel {
     private final StatusBar statusBar;
     private final TabPanel tabPanel;
     
-    public MainUi() {
+    public GollumPanel() {
         LocaleConstants localeConstants = Locale.getConstants();
         this.controlPanel = new ControlPanel();
 

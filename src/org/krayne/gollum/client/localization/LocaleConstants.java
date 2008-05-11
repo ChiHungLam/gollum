@@ -25,6 +25,7 @@ public interface LocaleConstants extends Constants {
     String googleSatellite();
     String googleHybrid();
     String googleNormal();
+    String googlePhysical();
     
     // map
     String mapTabHeading();

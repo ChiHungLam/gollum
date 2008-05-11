@@ -20,7 +20,7 @@ import com.google.gwt.user.client.ui.Widget;
 public class GollumPanel extends DockPanel {
     private static final String STYLE_NAME = SharedStyles.STRETCH;
     private static final String TAB_BAR_STYLE_NAME = "gollumMainTabBar";
-    private static final String DEFAULT_SPLIT_POSITION = "250px";
+    private static final String MAIN_SPLIT_POSITION = "250px";
 
     private final ControlPanel controlPanel;
     private final OpenLayersMap map;
@@ -28,6 +28,7 @@ public class GollumPanel extends DockPanel {
     private final MapPanel mapPanel;
     private final StatusBar statusBar;
     private final TabPanel tabPanel;
+    private final DetailsPanel detailsPanel;
     
     public GollumPanel() {
         LocaleConstants localeConstants = Locale.getConstants();
@@ -50,14 +51,21 @@ public class GollumPanel extends DockPanel {
         this.tabPanel.getTabBar().setStyleName(TAB_BAR_STYLE_NAME);
         this.tabPanel.add(this.mapPanel, localeConstants.mapTabHeading());
         this.tabPanel.selectTab(0);
+        
+        // init details panel
+        this.detailsPanel = new DetailsPanel();
+        this.detailsPanel.setStyleName(SharedStyles.STRETCH);
 
         // layout
-        DockPanel controlPanelContainer = new DockPanel();
-        controlPanelContainer.add(this.controlPanel, DockPanel.CENTER);
-
+        DockPanel leftPanel = new DockPanel();
+        leftPanel.setStyleName(SharedStyles.STRETCH);
+        leftPanel.add(this.controlPanel, DockPanel.NORTH);
+        leftPanel.add(this.detailsPanel, DockPanel.SOUTH);
+        leftPanel.setCellHeight(this.detailsPanel, "10px");
+        
         HorizontalSplitPanel mainSplitPanel = new HorizontalSplitPanel();
-        mainSplitPanel.setSplitPosition(DEFAULT_SPLIT_POSITION);
-        mainSplitPanel.setLeftWidget(this.controlPanel);
+        mainSplitPanel.setSplitPosition(MAIN_SPLIT_POSITION);
+        mainSplitPanel.setLeftWidget(leftPanel);
         mainSplitPanel.setRightWidget(this.tabPanel);
 
         this.setStyleName(STYLE_NAME);
@@ -76,5 +84,17 @@ public class GollumPanel extends DockPanel {
     
     public void addControlPanelSection(ControlPanelSection section) {
         this.controlPanel.addSection(section);
+    }
+    
+    public void setDetailsWidget(Widget w) {
+        this.detailsPanel.setWidget(w);
+    }
+    
+    public void setDetailsVisible(boolean visible) {
+        this.detailsPanel.setVisible(visible);
+    }
+    
+    public StatusBar getStatusBar() {
+        return this.statusBar;
     }
 }

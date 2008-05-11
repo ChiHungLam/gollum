@@ -11,7 +11,7 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class WidgetContainer extends DockPanel {
     public static final String STYLE_NAME = "gollumWidgetContainer";
-
+    
     /**
      * Constructs a {@code WidgetContainer} that holds the
      * specified widget.

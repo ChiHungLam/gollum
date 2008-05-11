@@ -21,6 +21,9 @@ public interface LocaleConstants extends Constants {
     String longitudeInDegrees();
     String zoomLevel();
     
+    // details
+    String defaultDetailsHeading();
+    
     // layers
     String googleSatellite();
     String googleHybrid();

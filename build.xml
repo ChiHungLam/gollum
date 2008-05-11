@@ -12,7 +12,8 @@
 
   <target name="jar" depends="compile">
     <copy todir="${classesDest}">
-      <fileset dir="${src}" excludes="org/krayne/gollum/public/lib/" />
+      <!-- <fileset dir="${src}" excludes="org/krayne/gollum/public/lib/" /> -->
+      <fileset dir="${src}" />
     </copy>
     <jar destfile="${jarDest}"
          basedir="${classesDest}"

@@ -19,26 +19,40 @@ a:hover {
 .gollumControlPanel {
   border-spacing: 0px;
   width: 100%;
+  padding-bottom: 20px;
 }
 
 .gollumControlPanel .gwt-StackPanelItem {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 11px;
   background: #595959;
   color: #dddddd;
   border-bottom: 1px solid #696969;
-  padding: 5px 3px 5px 10px;
+  padding: 4px 4px 4px 5px;
   cursor: pointer;
 }
 
-.gollumStatusBar {
+.gollumDetailsPanel {
   background-color: #3c4961;
-  padding: 3px;
+  border: 1px solid #3c4961; /* hack to prevent weird scrolling problem in ff */
 }
 
-.gollumStatusBar .gwt-Label {
-  font-size: 10px;
-  color: #8d9ab4;
+.gollumDetailsPanel a {
+  font-weight: bold;
+  color: #dddddd;
+}
+
+.gollumDetailsPanel .header {
+  padding: 4px 4px 4px 5px;
+  background-color: #2e3a4f;
+}
+
+.gollumDetailsPanel .header:hover {
+  background-color: #232e42;
+}
+
+.gollumDetailsPanel .content {
+  padding-bottom: 10px;
 }
 
 .gollumHeaderLabel {
@@ -74,6 +88,17 @@ a:hover {
   cursor: default;
   color: #ffffff;
   background-color: #6479a5;
+}
+
+.gollumStatusBar {
+  background-color: #3c4961;
+  border-top: 1px solid #6479a5;
+  padding: 3px;
+}
+
+.gollumStatusBar .gwt-Label {
+  font-size: 10px;
+  color: #8d9ab4;
 }
 
 .gollumStretch {
@@ -113,6 +138,17 @@ a:hover {
   background-color: #333333;
   border-right: 1px solid #555555;
   border-left: 1px solid #555555; 
+}
+
+.gwt-VerticalSplitPanel {
+  border: none;
+}
+
+.gwt-VerticalSplitPanel .vsplitter {
+  cursor: move;
+  background-color: #333333;
+  border-top: 1px solid #555555;
+  border-bottom: 1px solid #555555; 
 }
 
 .gwt-Label {

@@ -22,6 +22,12 @@ public class Google {
         }
     }
     
+    public static class PhysicalLayer extends Layer {
+        public PhysicalLayer(String layerName) {
+            super(_createPhysicalLayer(layerName));
+        }
+    }
+    
     //--------------------------------------------------------------------------
     
     private static native JavaScriptObject _createSatelliteLayer(String layerName) /*-{
@@ -34,5 +40,9 @@ public class Google {
     
     private static native JavaScriptObject _createNormalLayer(String layerName) /*-{
         return new $wnd.OpenLayers.Layer.Google(layerName, {'type' : $wnd.G_NORMAL_MAP});
+    }-*/;
+    
+    private static native JavaScriptObject _createPhysicalLayer(String layerName) /*-{
+        return new $wnd.OpenLayers.Layer.Google(layerName, {'type' : $wnd.G_PHYSICAL_MAP});
     }-*/;
 }

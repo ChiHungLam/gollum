@@ -10,6 +10,7 @@ public class DefaultOpenLayersMapWidget extends OpenLayersMapWidget {
         LocaleConstants localeConstants = Locale.getConstants();
         OpenLayersMap map = (OpenLayersMap) this.getMap();
         map.addLayer(new Google.SatelliteLayer(localeConstants.googleSatellite()));
+        map.addLayer(new Google.PhysicalLayer(localeConstants.googlePhysical()));
         map.addLayer(new Google.HybridLayer(localeConstants.googleHybrid()));
         map.addLayer(new Google.NormalLayer(localeConstants.googleNormal()));
         map.addControl(new Controls.Navigation());

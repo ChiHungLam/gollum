@@ -19,7 +19,6 @@ a:hover {
 .gollumControlPanel {
   border-spacing: 0px;
   width: 100%;
-  padding-bottom: 20px;
 }
 
 .gollumControlPanel .gwt-StackPanelItem {
@@ -39,6 +38,10 @@ a:hover {
 
 .gollumDetailsPanel a {
   font-weight: bold;
+  color: #dddddd;
+}
+
+.gollumDetailsPanel a:hover {
   color: #dddddd;
 }
 
@@ -120,12 +123,13 @@ a:hover {
 
 .gollumWidgetContainer {
   padding: 5px;
+  width: 100%;
 }
 
 .gwt-Button {
-  background-color: #333333;
-  border: 1px solid #555555;
-  color: #cccccc;
+  background-color: #999999;
+  border: 1px solid #999999;
+  color: #222222;
   font-size: 11px;
 }
 
@@ -174,4 +178,3 @@ a:hover {
   border-right: 1px solid #6479a5;
   border-left: 1px solid #6479a5;
 }
-

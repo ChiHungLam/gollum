@@ -1,6 +1,0 @@
-= Basic Usage =
-
-Using gollum is like using any other GWT module. Simply add the following line in your module xml file:
-
-{{{<inherits name='org.krayne.gollum.Gollum'/>}}}
-

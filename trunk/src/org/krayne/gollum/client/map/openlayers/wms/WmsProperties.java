@@ -16,9 +16,11 @@ public class WmsProperties {
     private final String format;
     private final boolean tiled;
     private final LonLat tilesOrigin;
+    private final boolean isBaseLayer;
+    private final boolean isTransparent;
     
     public WmsProperties(int height, int width, String layers, String styles,
-            String srs, String format, boolean tiled, LonLat tilesOrigin) {
+            String srs, String format, boolean tiled, LonLat tilesOrigin, boolean isBaseLayer, boolean isTransparent) {
         this.height = height;
         this.width = width;
         this.layers = layers;
@@ -27,37 +29,47 @@ public class WmsProperties {
         this.format = format;
         this.tiled = tiled;
         this.tilesOrigin = tilesOrigin;
+        this.isBaseLayer = isBaseLayer;
+        this.isTransparent = isTransparent;
     }
 
     public int getHeight() {
-        return height;
+        return this.height;
     }
 
     public int getWidth() {
-        return width;
+        return this.width;
     }
 
     public String getLayers() {
-        return layers;
+        return this.layers;
     }
 
     public String getStyles() {
-        return styles;
+        return this.styles;
     }
 
     public String getSrs() {
-        return srs;
+        return this.srs;
     }
 
     public String getFormat() {
-        return format;
+        return this.format;
     }
 
     public boolean isTiled() {
-        return tiled;
+        return this.tiled;
     }
 
     public LonLat getTilesOrigin() {
-        return tilesOrigin;
+        return this.tilesOrigin;
+    }
+    
+    public boolean isBaseLayer() {
+    	return this.isBaseLayer;
+    }
+    
+    public boolean isTransparent() {
+    	return this.isTransparent;
     }
 }

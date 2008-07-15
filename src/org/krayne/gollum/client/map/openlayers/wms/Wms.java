@@ -22,15 +22,18 @@ public class Wms extends Layer {
                 wmsProperties.isTiled() ? "true" : "",
                 
                 wmsProperties.getTilesOrigin() == null ? 
-                		"" : wmsProperties.getTilesOrigin().getLonDegrees() + "," + wmsProperties.getTilesOrigin().getLatDegrees()
-                ));
+                		"" : wmsProperties.getTilesOrigin().getLonDegrees() + "," + wmsProperties.getTilesOrigin().getLatDegrees(),
+                wmsProperties.isBaseLayer() ? "" : "false",
+                wmsProperties.isTransparent() ? "true" : ""
+        ));
     }
 
     // --------------------------------------------------------------------------
 
     private static native JavaScriptObject _createWmsLayer(String layerName, String wmsUrl, 
     		String height, String width, String layers, String styles, 
-    		String srs, String format, String isTiled, String tilesOrigin) /*-{
+    		String srs, String format, String isTiled, String tilesOrigin,
+    		String isBaseLayer, String isTransparent) /*-{
         var params = {};
         if ( height != "" ) params["height"] = height;
         if ( width != "" ) params["width"] = width;
@@ -40,7 +43,10 @@ public class Wms extends Layer {
         if ( format != "" ) params["format"] = format;
         if ( isTiled != "" ) params["tiled"] = isTiled;
         if ( tilesOrigin != "" ) params["tilesOrigin"] = tilesOrigin;
+        if ( isTransparent != "" ) params["transparent"] = isTransparent;
         
-        return new $wnd.OpenLayers.Layer.WMS(layerName, wmsUrl, params);
+        var wms = new $wnd.OpenLayers.Layer.WMS(layerName, wmsUrl, params);
+        if ( isBaseLayer != "" ) wms.setIsBaseLayer(false);
+        return wms;
     }-*/;
 }

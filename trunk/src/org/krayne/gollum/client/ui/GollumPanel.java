@@ -3,7 +3,6 @@ package org.krayne.gollum.client.ui;
 import org.krayne.gollum.client.localization.Locale;
 import org.krayne.gollum.client.localization.LocaleConstants;
 import org.krayne.gollum.client.map.Map;
-import org.krayne.gollum.client.map.openlayers.DefaultOpenLayersMapWidget;
 import org.krayne.gollum.client.map.openlayers.OpenLayersMap;
 import org.krayne.gollum.client.map.openlayers.OpenLayersMapWidget;
 import org.krayne.gollum.client.ui.controlpanel.ControlPanel;
@@ -33,12 +32,12 @@ public class GollumPanel extends DockPanel {
     private final DetailsPanel detailsPanel;
     private final HorizontalSplitPanel mainSplitPanel;
     
-    public GollumPanel(boolean isSphericalMercator) {
+    public GollumPanel(boolean isSphericalMercator, OpenLayersMapWidget mapWidget) {
         LocaleConstants localeConstants = Locale.getConstants();
         this.controlPanel = new ControlPanel();
 
         // init map
-        this.mapWidget = new DefaultOpenLayersMapWidget(isSphericalMercator);
+        this.mapWidget = mapWidget;
         this.map = (OpenLayersMap) this.mapWidget.getMap();
         this.mapPanel = new MapPanel(this.mapWidget);
         
